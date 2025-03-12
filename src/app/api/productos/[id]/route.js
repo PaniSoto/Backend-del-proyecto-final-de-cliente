@@ -11,7 +11,6 @@ export async function GET(request, { params }) {
 
     const { id } = await params
     const results = await collection.find({ _id: new ObjectId(id) }).toArray();
-    // console.log(results);
-    // return Response.json(id);
+
     return Response.json(results[0]);
 }
